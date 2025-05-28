@@ -3,7 +3,7 @@ Visualization for the Generic example
 =====================================
 
 This `pyWisp` example can be used for the Generic example.
-The following features contains no additonal features.
+The following features contains no additional features.
 
 * Heartbeat
 .. sphinx-marker
