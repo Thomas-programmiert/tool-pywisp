@@ -38,31 +38,67 @@ class ExperimentModule(QObject, metaclass=ExperimentModuleMeta):
     @property
     @abstractmethod
     def publicSettings(self):
+        """
+        OrderedDict of settings which can be changed in the GUI with keys and values.
+        must be declared
+        """
         pass
 
     @property
     @abstractmethod
     def dataPoints(self):
+        """
+        array of strings for the names of every plotable parameter.
+        must be declared
+        """
         pass
 
     @property
     @abstractmethod
     def connection(self):
+        """
+        string of the chosen connections classname.
+        must be declared
+        """
         pass
 
     @abstractmethod
     def handleFrame(self, frame):
+        """
+        returns a dict with keys 'Time' and 'DataPoints',
+        where the value of 'Time' is the time in milliseconds as a long int,
+        and the value of 'Datapoints' is a dict. 
+        The Datapoint dict has names as keys and the current values of plottable parameters
+        """
         pass
 
     @abstractmethod
     def getStartParams(self, *args):
+        """
+        fetches parameters from the GUI when starting an experiment
+        returns them as array of dicts with key's 'id' and 'msg',
+        where the value of 'id' is the identifier of the frame,
+        and the value of 'msg' is the raw data of a packed struct.
+        """
         pass
 
     @abstractmethod
     def getStopParams(self, *args):
+        """
+        fetches parameters from the GUI when stopping an experiment
+        returns them as array of dicts with key's 'id' and 'msg',
+        where the value of 'id' is the identifier of the frame,
+        and the value of 'msg' is the raw data of a packed struct.
+        """
         pass
 
     @abstractmethod
     def getParams(self, *args):
+        """
+        fetches parameters from the GUI every tick
+        returns them as array of dicts with key's 'id' and 'msg',
+        where the value of 'id' is the identifier of the frame,
+        and the value of 'msg' is the raw data of a packed struct.
+        """
         pass
 

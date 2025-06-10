@@ -6,7 +6,7 @@ To visualize and control a test rig with PyWisp the following files must be incl
 
 - main.py: Main file to register all needed :mod:`pywisp.experimentModules`, :mod:`pywisp.connection`, :mod:`pywisp.visualization` and starts the GUI.
 - defaults.sreg: The definition of all experiments.
-- connection.py: The implementation of all ::mod:`pywisp.connection`.
+- connection.py: The implementation of all :mod:`pywisp.connection`.
 - visualization.py: The implementation of all :mod:`pywisp.visualization`.
 - Files for the :mod:`pywisp.experimentModules`: It is recommended to have one for file each module, i.e. `controller`, `testbench`. For detailed information see :ref:`chapter_examples`.
 
@@ -22,19 +22,19 @@ testbench handling itself.
 - `publicSettings`: Settings, that can be changed by the user in the GUI.
 - `connection`: Connection name, that is required to read and write to the correct connection.
 
-4 functions can be implemented:
+4 functions can be implemented to send data from the GUI to the test rig and back:
 
-- `getStartParams`: Function to handle parameter, that should be set on experiment start.
-- `getStopParams`: Function to handle parameter, that should be set on experiment end.
-- `getParams`: Function to handle parameter, that should be set on start or during the experiment.
-- `handleFrame`: Function to handle frames from test rig and sets the data points to show in the GUI.
+- `getStartParams`: Function to handle GUI parameter, that should be set on experiment start.
+- `getStopParams`: Function to handle GUI parameter, that should be set on experiment end.
+- `getParams`: Function to handle GUI parameter, that should be set on start or during the experiment.
+- `handleFrame`: Function to handle frames from test rig and sets the data points which can be plotted in the GUI.
 
 For detailed information see the :ref:`chapter_examples` section.
 
 Connection
 ----------
 
-It is necessary to implement the used connection types, where the class name specifies the name used in the GUI and the 
+It is necessary to implement the used connection types, where the class name specifies the connection used in the GUI and the 
 default settings. The settings can be changed in the GUI directly. All implementations must be derived from
 :class:`~pywisp.visualization.MplVisualizer`. Currently two connection types are available and can implemented, exemplary:
 
