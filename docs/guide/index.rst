@@ -2,14 +2,13 @@
 Guide
 =====
 
-To visulize and control a test rig with PyWisp some files are needed that are summarized in a project. Each project
-must include the following files:
+To visualize and control a test rig with PyWisp the following files must be included as they are required to describe a project:
 
 - main.py: Main file to register all needed :mod:`pywisp.experimentModules`, :mod:`pywisp.connection`, :mod:`pywisp.visualization` and starts the GUI.
 - defaults.sreg: The definition of all experiments.
 - connection.py: The implementation of all ::mod:`pywisp.connection`.
 - visualization.py: The implementation of all :mod:`pywisp.visualization`.
-- Files for the :mod:`pywisp.experimentModules`: It is recommended to have one file each module, i.e. `controller`, `testbench`. For detailed information see :ref:`chapter_examples`.
+- Files for the :mod:`pywisp.experimentModules`: It is recommended to have one for file each module, i.e. `controller`, `testbench`. For detailed information see :ref:`chapter_examples`.
 
 ExperimentModule
 ----------------
@@ -35,9 +34,9 @@ For detailed information see the :ref:`chapter_examples` section.
 Connection
 ----------
 
-It is necessary to implement the used connection types, where the class name specify the name used in the GUI and the
-default settings. The settings can be changed in the GUI directly. All implementations mus derived from
-:class:`~pywisp.visualization.MplVisualizer`. Currently two connection types are available and can implemented exemplary:
+It is necessary to implement the used connection types, where the class name specifies the name used in the GUI and the 
+default settings. The settings can be changed in the GUI directly. All implementations must be derived from
+:class:`~pywisp.visualization.MplVisualizer`. Currently two connection types are available and can implemented, exemplary:
 
 - Serial connection:
 
@@ -72,7 +71,7 @@ Visualizer
 It is possible to have different visualizers registered. They can be selected in GUI at runtime. Currently only
 visualizers based on matplotlib are available. For the implementation the base class
 :class:`~pywisp.visualization.MplVisualizer` must be derived and the method
-:func:`~pywisp.visualization.MplVisualizer.update` should be implemented. It is recommented to use
+:func:`~pywisp.visualization.MplVisualizer.update` should be implemented. It is recommended to use
 
 .. code-block:: python
 
@@ -105,7 +104,7 @@ Heartbeat
 
     Heartbeat: <time in ms>
 
-It can be diabled by set the parameter to zero.
+It can be disabled by setting the parameter to zero.
 
 For detailed information see the :ref:`chapter_examples` section.
 
@@ -158,7 +157,7 @@ Below a normal configuration with two experiments is presented:
         MovingWindowEnable: True
 
 In this example `Test` and `SeriesTrajectory` are derived :mod:`pywisp.experimentModules` classes. The settings below
-of `Remote` configurates a Push Button, that is connected to ´Value1` of the :mod:`pywisp.experimentModules` class
+of `Remote` configures a Push Button, that is connected to ´Value1` of the :mod:`pywisp.experimentModules` class
 `Test`. The 'Config' section shows the settings for the plot configuration.
 
 For detailed information see the :ref:`chapter_examples` section.
@@ -171,7 +170,7 @@ Additionally the plot and visualization have some configuration parameters. Thes
 * TimerTime: Update interval of the visualization/plot data
 * MovingWindow: Moving Window of the plot visualization
 
-The can be set by a right click of the plot in the GUI or about the Config menu.
+The can be set by a right click of the plot in the GUI or through the Config menu.
 To save the configuration the `defaults.sreg` can be extended by a `Config section` with the keys:
 
 .. code-block:: yaml
