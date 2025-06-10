@@ -1,0 +1,18 @@
+# default experiment file that is loaded when the gui starts up
+
+- Name: RunSystem
+
+  OneMassOscillator:
+
+  Trajectory:
+    Type: 1
+    times: [0, 1]
+    values: [0, 0.15]
+
+  Visu:
+    MplOneMassOscillatorVisualizer:
+
+  Config:
+    MovingWindowSize: 10
+    MovingWindowEnable: True
+    HeartbeatTime: 0
